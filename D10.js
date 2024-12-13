@@ -311,7 +311,7 @@ function stampa() {
     console.log(td.textContent); 
   });
 }
-document.addEventListener("DOMContentLoaded", stampa);
+window.onload = stampa;
 
 
 /* ESERCIZIO 23
@@ -324,7 +324,7 @@ function addRedBackgroundToLinks() {
     link.style.backgroundColor = 'red';
   });
 }
-document.addEventListener("DOMContentLoaded", addRedBackgroundToLinks);
+window.onload = addRedBackgroundToLinks;
 
 /* ESERCIZIO 24
   Scrivi una funzione per aggiungere un nuovo elemento alla lista non ordinata con id "myList".
@@ -340,34 +340,26 @@ function addNewListItem() {
   myList.appendChild(newListItem);
 }
 
-document.addEventListener('DOMContentLoaded', addNewListItem);
+window.onload = addNewListItem;
 
 
 /* ESERCIZIO 25
   Scrivi una funzione per svuotare la lista non ordinata con id "myList".
 */
 
-document.addEventListener('DOMContentLoaded', function () {
+
   function clearList() {
     const myList = document.getElementById('myList');
     
-    if (myList) {
-      while (myList.firstChild) {
-        myList.removeChild(myList.firstChild);
-      }
-    } else {
-      console.log('Elemento con "myList" non trovato');
-    }
-  }
+    myList.innerHTML = '';
 
-  //clearList();   //per svuotare lista
-});
+};
+//clearList();   //per svuotare lista
 
 /* ESERCIZIO 26
   Scrivi una funzione per aggiungere ad ogni tag <tr> la classe CSS "test"
 */
 
-document.addEventListener('DOMContentLoaded', function () {
   function addClassToAllTr() {
     const trElements = document.querySelectorAll('tr');
     trElements.forEach(tr => {
@@ -375,7 +367,6 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
   addClassToAllTr();
-});
 
 
 // [EXTRA] JS Avanzato
