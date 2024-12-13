@@ -399,6 +399,30 @@ window.onload = addNewListItem;
   Crea una funzione chiamata "isItPrime" che riceve un numero come parametro e ritorna true se il numero fornito è un numero primo.
 */
 
+function isItPrime(n) {
+  if (n <= 1) {
+    return false;
+  }
+  if (n === 2) {
+    return true;
+  }
+  if (n % 2 === 0) {
+    return false;
+  }
+
+  for (let i = 3; i <= Math.sqrt(n); i += 2) {
+    if (n % i === 0) {
+      return false;
+    }
+  }
+
+  return true;
+}
+
+console.log(isItPrime(5));
+console.log(isItPrime(10));
+
+
 /* Questo array viene usato per gli esercizi. Non modificarlo. */
 
 const movies = [
